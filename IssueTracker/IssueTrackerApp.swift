@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct IssueTrackerApp: App {
+    @StateObject var dataManager = DataManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationSplitView {
+                SidebarView()
+            } content: {
+                ContentView()
+            } detail: {
+                DetailView()
+            }
+            .environment(\.managedObjectContext, dataManager.container.viewContext)
+            .environmentObject(dataManager)
         }
     }
 }
