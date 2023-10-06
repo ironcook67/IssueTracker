@@ -3,8 +3,8 @@
     <entity name="Issue" representedClassName="Issue" syncable="YES" codeGenerationType="class">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="content_" optional="YES" attributeType="String"/>
-        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="modificationDate" optional="YES" attributeType="Date" derived="YES" derivationExpression="now()" usesScalarValueType="NO"/>
+        <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="modificationDate_" optional="YES" attributeType="Date" derived="YES" derivationExpression="now()" usesScalarValueType="NO"/>
         <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title_" optional="YES" attributeType="String"/>
         <relationship name="tags_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="issues_" inverseEntity="Tag"/>
