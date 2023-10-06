@@ -68,7 +68,7 @@ struct ContentView: View {
             }
             
             Button(action: dataManager.newIssue) {
-                Label("New Issue", systemImage: "suqare.and.pencil")
+                Label("New Issue", systemImage: "square.and.pencil")
             }
         }
     }

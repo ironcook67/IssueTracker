@@ -1,5 +1,5 @@
 //
-//  Ext+Issue.swift
+//  Issue+Ext.swift
 //  IssueTracker
 //
 //  Created by Chon Torres on 10/5/23.
