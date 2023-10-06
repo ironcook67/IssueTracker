@@ -29,7 +29,7 @@ class DataManager: ObservableObject {
     @Published var filterPriority = -1
     @Published var filterStatus = Status.all
     @Published var sortType = SortType.dateCreated
-    @Published var sortNewestFirst = true
+    @Published var sortOldestFirst = false
     
     private var saveTask: Task<Void, Error>?
     
@@ -174,10 +174,33 @@ class DataManager: ObservableObject {
         
         let request = Issue.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
-        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortOldestFirst)]
         
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
-        return allIssues.sorted()
+        return allIssues
+    }
+    
+    func newIssue() {
+        let issue = Issue(context: container.viewContext)
+        issue.title = "New Issue"
+        issue.creationDate = .now
+        issue.priority = 1
+        
+        // If a tag is selected, create the new issue with that tag.
+        if let tag = selectedFilter?.tag {
+            issue.addToTags(tag)
+        }
+        
+        save()
+        
+        selectedIssue = issue
+    }
+    
+    func newTag() {
+        let tag = Tag(context: container.viewContext)
+        tag.uuid = UUID()
+        tag.name = "New Tag"
+        save()
     }
 }
     

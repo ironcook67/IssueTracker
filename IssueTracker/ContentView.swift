@@ -41,9 +41,9 @@ struct ContentView: View {
                     
                     Divider()
                     
-                    Picker("Sort Order", selection: $dataManager.sortNewestFirst) {
-                        Text("Newest to Oldest").tag(true)
-                        Text("Oldest to Newest").tag(false)
+                    Picker("Sort Order", selection: $dataManager.sortOldestFirst) {
+                        Text("Newest to Oldest").tag(false)
+                        Text("Oldest to Newest").tag(true)
                     }
                 }
                 
@@ -65,6 +65,10 @@ struct ContentView: View {
             } label: {
                 Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
                     .symbolVariant(dataManager.filterEnabled ? .fill : .none)
+            }
+            
+            Button(action: dataManager.newIssue) {
+                Label("New Issue", systemImage: "suqare.and.pencil")
             }
         }
     }
