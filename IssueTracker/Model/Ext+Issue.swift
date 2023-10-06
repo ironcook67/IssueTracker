@@ -28,6 +28,20 @@ extension Issue {
         set { modificationDate_ = newValue}
     }
     
+    var status: String {
+        completed ? "Closed" : "Open"
+    }
+    
+    var tagsList: String {
+        guard let tags = tags_ else { return "No tags"}
+        
+        if tags.count == 0 {
+            return "No tags"
+        } else {
+            return sortedTags.map(\.name).formatted()
+        }
+    }
+    
     var tags: Set<Tag> {
         get { (tags_ as? Set<Tag>) ?? [] }
         set { tags_ = newValue as NSSet }

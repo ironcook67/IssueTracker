@@ -11,6 +11,7 @@ class DataManager: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
     @Published var selectedFilter: Filter? = Filter.all
+    @Published var selectedIssue: Issue?
     
     static var preview: DataManager = {
         let dataManager = DataManager(inMemory: true)
@@ -25,11 +26,24 @@ class DataManager: ObservableObject {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
         
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+        
+        container.persistentStoreDescriptions.first?.setOption(true as NSNumber, 
+                                                               forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange,
+                                               object: container.persistentStoreCoordinator,
+                                               queue: .main, using: remoteStoreChanged)
+        
         container.loadPersistentStores { storeDescriotion, error in
             if let error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func remoteStoreChanged(_ notification: Notification) {
+        objectWillChange.send()
     }
     
     func save() {
@@ -62,6 +76,16 @@ class DataManager: ObservableObject {
         delete(request2)
         
         save()
+    }
+    
+    func missingTags(from issue: Issue) -> [Tag] {
+        let request = Tag.fetchRequest()
+        let allTags = (try? container.viewContext.fetch(request)) ?? []
+        
+        let allTagsSet = Set(allTags)
+        let difference = allTagsSet.symmetricDifference(issue.tags)
+        
+        return difference.sorted()
     }
 }
     

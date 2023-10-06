@@ -18,6 +18,9 @@
 		4D1E474B2ACF7E9F00A74E79 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */; };
 		4D1E474D2ACF7EA600A74E79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474C2ACF7EA600A74E79 /* DetailView.swift */; };
 		4D1E474F2ACF811100A74E79 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474E2ACF811100A74E79 /* Filter.swift */; };
+		4DE0331C2ACFC69C00F0B354 /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0331B2ACFC69C00F0B354 /* IssueView.swift */; };
+		4DE0331E2ACFC6A200F0B354 /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0331D2ACFC6A200F0B354 /* NoIssueView.swift */; };
+		4DF816142ACFA846009A52CC /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF816132ACFA846009A52CC /* IssueRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		4D1E474C2ACF7EA600A74E79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4D1E474E2ACF811100A74E79 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		4DE0331B2ACFC69C00F0B354 /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
+		4DE0331D2ACFC6A200F0B354 /* NoIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIssueView.swift; sourceTree = "<group>"; };
+		4DF816132ACFA846009A52CC /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +80,11 @@
 				4D1E47402ACF5DCC00A74E79 /* Model */,
 				4D1E474E2ACF811100A74E79 /* Filter.swift */,
 				4D1E47302ACF5B9000A74E79 /* ContentView.swift */,
+				4DF816132ACFA846009A52CC /* IssueRow.swift */,
 				4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */,
 				4D1E474C2ACF7EA600A74E79 /* DetailView.swift */,
+				4DE0331B2ACFC69C00F0B354 /* IssueView.swift */,
+				4DE0331D2ACFC6A200F0B354 /* NoIssueView.swift */,
 				4D1E472E2ACF5B9000A74E79 /* IssueTrackerApp.swift */,
 				4D1E473D2ACF5C0500A74E79 /* Main.xcdatamodeld */,
 				4D1E47322ACF5B9200A74E79 /* Assets.xcassets */,
@@ -188,6 +197,9 @@
 				4D1E47312ACF5B9000A74E79 /* ContentView.swift in Sources */,
 				4D1E472F2ACF5B9000A74E79 /* IssueTrackerApp.swift in Sources */,
 				4D1E474F2ACF811100A74E79 /* Filter.swift in Sources */,
+				4DE0331C2ACFC69C00F0B354 /* IssueView.swift in Sources */,
+				4DE0331E2ACFC6A200F0B354 /* NoIssueView.swift in Sources */,
+				4DF816142ACFA846009A52CC /* IssueRow.swift in Sources */,
 				4D1E47422ACF5DDC00A74E79 /* Ext+Issue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
