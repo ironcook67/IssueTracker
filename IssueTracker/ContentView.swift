@@ -10,34 +10,26 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var dataManager: DataManager
     
-    var issues: [Issue] {
-        let filter = dataManager.selectedFilter ?? .all
-        var allIssues: [Issue]
-        
-        if let tag = filter.tag {
-            allIssues = Array(tag.issues)
-        } else {
-            let request = Issue.fetchRequest()
-            request.predicate = NSPredicate(format: "modificationDate_ > %@", filter.minModificationDate as NSDate)
-            allIssues = (try? dataManager.container.viewContext.fetch(request)) ?? []
-        }
-        
-        return allIssues.sorted()
-    }
-    
     var body: some View {
         VStack {
             List(selection: $dataManager.selectedIssue) {
-                ForEach(issues) { issue in
+                ForEach(dataManager.issuesForSelectedFilter()) { issue in
                     IssueRow(issue: issue)
                 }
                 .onDelete(perform: delete)
             }
         }
         .navigationTitle("Issues")
+        // TODO: - Fix Tags in Filtering
+        // This is not working in iOS17 due to a Apple "fix" that will not show tokens when the search field is not empty.
+        .searchable(text: $dataManager.filterText, tokens: $dataManager.filterTokens, suggestedTokens: .constant(dataManager.suggestedFilterTokens), prompt: "Filter issues, or type # to add tags") { tag in
+            Text(tag.name)
+        }
     }
     
     func delete(_ offsets: IndexSet) {
+        let issues = dataManager.issuesForSelectedFilter()
+        
         for offset in offsets {
             let item = issues[offset]
             dataManager.delete(item)
