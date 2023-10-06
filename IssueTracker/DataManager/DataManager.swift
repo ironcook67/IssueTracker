@@ -13,6 +13,8 @@ class DataManager: ObservableObject {
     @Published var selectedFilter: Filter? = Filter.all
     @Published var selectedIssue: Issue?
     
+    private var saveTask: Task<Void, Error>?
+    
     static var preview: DataManager = {
         let dataManager = DataManager(inMemory: true)
         dataManager.createSampleData()
@@ -49,6 +51,16 @@ class DataManager: ObservableObject {
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
+        }
+    }
+    
+    // Wait three seconds from the last edit to auto-save.
+    func queueSave() {
+        saveTask?.cancel()
+        
+        saveTask = Task { @MainActor in
+            try await Task.sleep(for: .seconds(3))
+            save()
         }
     }
     

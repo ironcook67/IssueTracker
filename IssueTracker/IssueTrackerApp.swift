@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct IssueTrackerApp: App {
     @StateObject var dataManager = DataManager()
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
@@ -22,6 +23,11 @@ struct IssueTrackerApp: App {
             }
             .environment(\.managedObjectContext, dataManager.container.viewContext)
             .environmentObject(dataManager)
+            .onChange(of: scenePhase) { oldPhase, newPhase in
+                if newPhase != .active {
+                    dataManager.save()
+                }
+            }
         }
     }
 }
