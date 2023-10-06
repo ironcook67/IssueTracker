@@ -15,4 +15,5 @@ struct DetailView: View {
 
 #Preview {
     DetailView()
+        .environmentObject(DataManager.preview)
 }

@@ -8,8 +8,13 @@
 import Foundation
 
 extension Tag {
+    var uuid: UUID {
+        get { uuid_ ?? UUID() }
+        set { uuid_ = newValue }
+    }
+    
     var name: String {
-        get { name_ ?? "" }
+        get { name_ ?? "No Name" }
         set { name_ = newValue }
     }
     

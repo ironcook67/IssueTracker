@@ -71,7 +71,7 @@ extension DataManager {
         
         for i in 1...5 {
             let tag = Tag(context: viewContext)
-            tag.id = UUID()
+            tag.uuid = UUID()
             tag.name = "Tag \(i)"
             
             for j in 1...10 {
