@@ -23,5 +23,5 @@ struct NoIssueView: View {
 
 #Preview {
     NoIssueView()
-        .environmentObject(DataManager.preview)
+        .environmentObject(DataManager(inMemory: true))
 }

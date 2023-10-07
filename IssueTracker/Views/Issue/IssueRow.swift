@@ -49,5 +49,5 @@ struct IssueRow: View {
 
 #Preview {
     IssueRow(issue: .example)
-        .environmentObject(DataManager.preview)
+        .environmentObject(DataManager(inMemory: true))
 }
