@@ -80,7 +80,9 @@ struct IssueView: View {
         .toolbar {
             Menu {
                 Button {
+#if os(iOS)
                     UIPasteboard.general.string = issue.title
+#endif
                 } label: {
                     Label("Copy Issue Title", systemImage: "doc.on.doc")
                 }
