@@ -82,6 +82,8 @@ class DataManager: ObservableObject {
     }
     
     func save() {
+        saveTask?.cancel()
+        
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }

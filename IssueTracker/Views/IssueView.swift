@@ -10,7 +10,7 @@ import SwiftUI
 struct IssueView: View {
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var issue: Issue
-
+    
     var body: some View {
         Form {
             Section {
@@ -75,6 +75,25 @@ struct IssueView: View {
         .disabled(issue.isDeleted)
         .onReceive(issue.objectWillChange) { _ in
             dataManager.queueSave()
+        }
+        .onSubmit(dataManager.save)
+        .toolbar {
+            Menu {
+                Button {
+                    UIPasteboard.general.string = issue.title
+                } label: {
+                    Label("Copy Issue Title", systemImage: "doc.on.doc")
+                }
+                
+                Button {
+                    issue.completed.toggle()
+                    dataManager.save()
+                } label: {
+                    Label(issue.completed ? "Re-open Issue" : "Close Issue", systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                }
+            } label: {
+                Label("Actions", systemImage: "ellipsis.circle")
+            }
         }
     }
 }
