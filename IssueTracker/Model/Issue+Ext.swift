@@ -28,6 +28,10 @@ extension Issue {
         set { modificationDate_ = newValue}
     }
     
+    var formattedCreationDate: String {
+        creationDate.formatted(date: .numeric, time: .omitted)
+    }
+    
     var status: String {
         completed ? "Closed" : "Open"
     }

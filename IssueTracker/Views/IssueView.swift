@@ -15,13 +15,13 @@ struct IssueView: View {
         Form {
             Section {
                 VStack(alignment: .leading) {
-                    TextField("Title", text: $issue.title, prompt: Text("Enter the issue title here."))
+                    TextField("Title", text: $issue.title, prompt: Text("Enter the issue title here"))
                         .font(.title)
                     
-                    Text("**Modified** \(issue.modificationDate.formatted(date: .long, time: .shortened))")
+                    Text("**Modified:** \(issue.modificationDate.formatted(date: .long, time: .shortened))")
                         .foregroundStyle(.secondary)
                     
-                    Text("**Status** \(issue.status)")
+                    Text("**Status:** \(issue.status)")
                         .foregroundStyle(.secondary)
                 }
                 
@@ -68,7 +68,7 @@ struct IssueView: View {
                         .font(.title2)
                         .foregroundStyle(.secondary)
                     
-                    TextField("Description", text: $issue.content, prompt: Text("Enter the issue description here."), axis: .vertical)
+                    TextField("Description", text: $issue.content, prompt: Text("Enter the issue description here"), axis: .vertical)
                 }
             }
         }

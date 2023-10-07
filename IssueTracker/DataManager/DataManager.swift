@@ -184,7 +184,7 @@ class DataManager: ObservableObject {
     
     func newIssue() {
         let issue = Issue(context: container.viewContext)
-        issue.title = "New Issue"
+        issue.title = NSLocalizedString("New issue", comment: "Create a new issue.")
         issue.creationDate = .now
         issue.priority = 1
         
@@ -201,7 +201,7 @@ class DataManager: ObservableObject {
     func newTag() {
         let tag = Tag(context: container.viewContext)
         tag.uuid = UUID()
-        tag.name = "New Tag"
+        tag.name = NSLocalizedString("New tag", comment: "Create a new tag.")
         save()
     }
 }
