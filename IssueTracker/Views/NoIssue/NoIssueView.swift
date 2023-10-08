@@ -9,12 +9,12 @@ import SwiftUI
 
 struct NoIssueView: View {
     @EnvironmentObject var dataManager: DataManager
-    
+
     var body: some View {
         Text("No Issue Selected")
             .font(.title)
             .foregroundStyle(.secondary)
-        
+
         Button("New Issue") {
             dataManager.newIssue()
         }

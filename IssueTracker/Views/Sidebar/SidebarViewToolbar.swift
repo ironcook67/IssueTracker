@@ -10,12 +10,12 @@ import SwiftUI
 struct SidebarViewToolbar: View {
     @EnvironmentObject var dataManager: DataManager
     @Binding var showingAwards: Bool
-    
+
     var body: some View {
         Button(action: dataManager.newTag) {
             Label("Add tag", systemImage: "plus")
         }
-        
+
         Button {
             showingAwards.toggle()
         } label: {

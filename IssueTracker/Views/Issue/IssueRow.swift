@@ -10,31 +10,31 @@ import SwiftUI
 struct IssueRow: View {
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var issue: Issue
-    
+
     var body: some View {
         NavigationLink(value: issue) {
             HStack {
                 Image(systemName: "exclamationmark.circle")
                     .imageScale(.large)
                     .opacity(issue.priority == 2 ? 1 : 0)
-                
+
                 VStack(alignment: .leading) {
                     Text(issue.title)
                         .font(.headline)
                         .lineLimit(1)
-                    
+
                     Text(issue.tagsList)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
-                
+
                 Spacer()
-                
+
                 VStack(alignment: .trailing) {
                     Text(issue.formattedCreationDate)
                         .accessibilityLabel(issue.creationDate.formatted(date: .abbreviated, time: .omitted))
                         .font(.subheadline)
-                    
+
                     if issue.completed {
                         Text("CLOSED")
                             .font(.body.smallCaps())

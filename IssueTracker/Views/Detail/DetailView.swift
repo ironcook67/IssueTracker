@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var dataManager: DataManager
-    
+
     var body: some View {
         VStack {
             if let issue = dataManager.selectedIssue {
