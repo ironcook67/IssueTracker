@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import UIKit
 
 enum SortType: String {
     case dateCreated = "creationDate_"
@@ -105,6 +106,15 @@ class DataManager: ObservableObject {
             if let error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
+
+#if DEBUG
+            // Used for UI Testing. Delete all of the data to start with a clean slate
+            // and turn off aninmation for faster tests.
+            if CommandLine.arguments.contains("enable-testing") {
+                self.deleteAll()
+                UIView.setAnimationsEnabled(false)
+            }
+#endif  // DEBUG
         }
     }
 

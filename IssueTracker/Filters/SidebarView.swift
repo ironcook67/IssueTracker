@@ -47,8 +47,8 @@ struct SidebarView: View {
             Button("Cancel", role: .cancel) { }
             TextField("New name", text: $tagName)
         }
-        .sheet(isPresented: $showingAwards, content: AwardsView.init)
         .navigationTitle("Filters")
+        .sheet(isPresented: $showingAwards, content: AwardsView.init)
     }
 
     func delete(_ offsets: IndexSet) {
@@ -77,6 +77,8 @@ struct SidebarView: View {
 }
 
 #Preview {
-    SidebarView()
-        .environmentObject(DataManager(inMemory: true))
+    NavigationStack {
+        SidebarView()
+            .environmentObject(DataManager(inMemory: true))
+    }
 }
