@@ -43,6 +43,18 @@ class DataManager: ObservableObject {
         return dataManager
     }()
 
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
+            fatalError("Failed to locate model file.")
+        }
+
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model file.")
+        }
+
+        return managedObjectModel
+    }()
+
     var suggestedFilterTokens: [Tag] {
         guard filterText.starts(with: "#") else {
             return []
@@ -64,7 +76,7 @@ class DataManager: ObservableObject {
     /// Defautls to permanent storage.
     /// - Parameter inMemory: Whether to store this data in temporary memory or not.
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "Main")
+        container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
 
         // For testing and previewing purposes, create a temporary, in-memory database
         // in /dev/null so the database is destroyed after the app finishes running.
@@ -259,7 +271,7 @@ extension DataManager {
 
         case "tags":
             // return true if they created a certain number of tags
-            let fetchRequest = Issue.fetchRequest()
+            let fetchRequest = Tag.fetchRequest()
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
 
