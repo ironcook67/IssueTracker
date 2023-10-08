@@ -16,7 +16,11 @@ enum Status {
     case all, open, closed
 }
 
+/// An environment singleton responsible for managing our Core Data stack, including
+/// handling saving, counting fetch requests, and dealing with sample data.
 class DataManager: ObservableObject {
+
+    /// The lone CloudKit container used to store all of our data
     let container: NSPersistentCloudKitContainer
 
     @Published var selectedFilter: Filter? = Filter.all
@@ -54,9 +58,16 @@ class DataManager: ObservableObject {
         return (try? container.viewContext.fetch(request).sorted()) ?? []
     }
 
+    /// Initializes a data controller, either in memory (for testing use such as previewing),
+    /// or in permanent storage (for use in regular app runs). 
+    ///
+    /// Defautls to permanent storage.
+    /// - Parameter inMemory: Whether to store this data in temporary memory or not.
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
 
+        // For testing and previewing purposes, create a temporary, in-memory database
+        // in /dev/null so the database is destroyed after the app finishes running.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
@@ -68,9 +79,15 @@ class DataManager: ObservableObject {
             true as NSNumber,
             forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
         )
-        NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange,
-                                               object: container.persistentStoreCoordinator,
-                                               queue: .main, using: remoteStoreChanged)
+
+        // Make sure that we watch iCloud for all changes to ensure the local UI is in sync
+        // when a remote change happenes.
+        NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange,
+            object: container.persistentStoreCoordinator,
+            queue: .main,
+            using: remoteStoreChanged
+        )
 
         container.loadPersistentStores { _, error in
             if let error {
@@ -83,6 +100,9 @@ class DataManager: ObservableObject {
         objectWillChange.send()
     }
 
+    /// Saves our Core Data context iff there are changes, this silently ignores
+    /// any errors cause by saving. This should be fine because all of our
+    /// attributes are optional.
     func save() {
         saveTask?.cancel()
 
@@ -91,7 +111,7 @@ class DataManager: ObservableObject {
         }
     }
 
-    // Wait three seconds from the last edit to auto-save.
+    // Batch up changes to avoid spamming save.
     func queueSave() {
         saveTask?.cancel()
 
@@ -111,6 +131,9 @@ class DataManager: ObservableObject {
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         batchDeleteRequest.resultType = .resultTypeObjectIDs
 
+        // Important: When performing a batch delete, we need to make sure we read the
+        // result back then merge all the changes back into our live view context so
+        // that the two stay in sync.
         if let delete = try? container.viewContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
             let changes = [NSDeletedObjectsKey: delete.result as? [NSManagedObjectID] ?? []]
             NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [container.viewContext])
@@ -137,6 +160,9 @@ class DataManager: ObservableObject {
         return difference.sorted()
     }
 
+    /// Runs a fetch request with various predicates that filter the user's issues based on
+    /// tag, title, and content text, search tokens, priority, and completion status.
+    /// - Returns: An array of all matching issues.
     func issuesForSelectedFilter() -> [Issue] {
         let filter = selectedFilter ?? .all
         var predicates = [NSPredicate]()
@@ -192,7 +218,7 @@ class DataManager: ObservableObject {
         issue.creationDate = .now
         issue.priority = 1
 
-        // If a tag is selected, create the new issue with that tag.
+        // If a tag is currently selected, create the new issue with that tag.
         if let tag = selectedFilter?.tag {
             issue.addToTags(tag)
         }
