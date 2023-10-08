@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "9D4F1295-2AAA-4D77-B84A-23960495A355",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:IssueTracker.xcodeproj",
+      "identifier" : "4D1E472A2ACF5B9000A74E79",
+      "name" : "IssueTracker"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:IssueTracker.xcodeproj",
+        "identifier" : "4DD0A7272AD24DBD00F72473",
+        "name" : "IssueTrackerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
