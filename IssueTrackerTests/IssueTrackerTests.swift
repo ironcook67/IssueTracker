@@ -17,11 +17,4 @@ class BaseTestCase: XCTestCase {
         dataManager = DataManager(inMemory: true)
         managedObjectContext = dataManager.container.viewContext
     }
-
-    func testSampleDataCreation() throws {
-        dataManager.createSampleData()
-
-        XCTAssertEqual(dataManager.count(for: Tag.fetchRequest()), 5, "Expected 5 tags in our sample data.")
-        XCTAssertEqual(dataManager.count(for: Issue.fetchRequest()), 50, "Expected 50 issues in our sample data.")
-    }
 }
