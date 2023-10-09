@@ -15,7 +15,7 @@ struct IssueTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationSplitView {
-                SidebarView()
+                SidebarView(dataManager: dataManager)
             } content: {
                 ContentView()
             } detail: {

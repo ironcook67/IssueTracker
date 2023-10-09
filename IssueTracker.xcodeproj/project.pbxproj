@@ -46,6 +46,7 @@
 		4DE033262AD0D04100F0B354 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE033242AD0D04100F0B354 /* Colors.xcassets */; };
 		4DE033292AD0D0E300F0B354 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE033282AD0D0E300F0B354 /* Award.swift */; };
 		4DF816142ACFA846009A52CC /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF816132ACFA846009A52CC /* IssueRow.swift */; };
+		4DFDB10F2AD3B1D00048574A /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDB10E2AD3B1D00048574A /* SidebarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		4DE033242AD0D04100F0B354 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DE033282AD0D0E300F0B354 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		4DF816132ACFA846009A52CC /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
+		4DFDB10E2AD3B1D00048574A /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			children = (
 				4D1E474E2ACF811100A74E79 /* Filter.swift */,
 				4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */,
+				4DFDB10E2AD3B1D00048574A /* SidebarViewModel.swift */,
 				4DD0A7082AD219C400F72473 /* SidebarViewToolbar.swift */,
 				4DD0A7182AD21FD800F72473 /* UserFilterRow.swift */,
 				4DD0A7162AD21F6100F72473 /* SmartFilterRow.swift */,
@@ -447,6 +450,7 @@
 				4D1E474B2ACF7E9F00A74E79 /* SidebarView.swift in Sources */,
 				4DE033212AD0CB1200F0B354 /* Bundle+Ext.swift in Sources */,
 				4D1E47452ACF74B800A74E79 /* DataManager.swift in Sources */,
+				4DFDB10F2AD3B1D00048574A /* SidebarViewModel.swift in Sources */,
 				4D1E47312ACF5B9000A74E79 /* ContentView.swift in Sources */,
 				4DD0A70D2AD21C6400F72473 /* ContentViewToolbar.swift in Sources */,
 				4D1E472F2ACF5B9000A74E79 /* IssueTrackerApp.swift in Sources */,
