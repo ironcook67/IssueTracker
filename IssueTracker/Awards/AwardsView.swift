@@ -45,11 +45,11 @@ struct AwardsView: View {
         }
     }
 
-    var awardTitle: String {
+    var awardTitle: LocalizedStringKey {
         if dataManager.hasEarned(award: selectedAward) {
             return "Unlocked \(selectedAward.name)"
         } else {
-            return ("Locked")
+            return "Locked"
         }
     }
 
