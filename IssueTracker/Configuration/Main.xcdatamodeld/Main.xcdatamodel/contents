@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Issue" representedClassName="Issue" syncable="YES" codeGenerationType="class">
+    <entity name="Issue" representedClassName="Issue" syncable="YES" codeGenerationType="class" coreSpotlightDisplayNameExpression="title_">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="content_" optional="YES" attributeType="String"/>
+        <attribute name="content_" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
         <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="modificationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="title_" optional="YES" attributeType="String"/>
+        <attribute name="title_" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
         <relationship name="tags_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="issues_" inverseEntity="Tag"/>
     </entity>
     <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
