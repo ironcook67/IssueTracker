@@ -6,6 +6,8 @@
         <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="modificationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reminderEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="reminderTime_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title_" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
         <relationship name="tags_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="issues_" inverseEntity="Tag"/>
     </entity>

@@ -8,6 +8,10 @@
 import Foundation
 
 extension Issue {
+    var identifier: String {
+        get { objectID.uriRepresentation().absoluteString }
+    }
+
     var title: String {
         get { title_ ?? "" }
         set { title_ = newValue }
@@ -38,6 +42,11 @@ extension Issue {
         } else {
             NSLocalizedString("Open", comment: "This issue is currently unresolved.")
         }
+    }
+
+    var reminderTime: Date {
+        get { reminderTime_ ?? .now }
+        set { reminderTime_ = newValue }
     }
 
     var tagsList: String {

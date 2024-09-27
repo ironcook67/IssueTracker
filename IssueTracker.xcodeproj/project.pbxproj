@@ -18,6 +18,7 @@
 		4D1E474B2ACF7E9F00A74E79 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */; };
 		4D1E474D2ACF7EA600A74E79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474C2ACF7EA600A74E79 /* DetailView.swift */; };
 		4D1E474F2ACF811100A74E79 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474E2ACF811100A74E79 /* Filter.swift */; };
+		4D5C72AB2CA617530087451F /* DataManager+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C72AA2CA617530087451F /* DataManager+Notifications.swift */; };
 		4DD0A6F72AD1E6F900F72473 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A6F62AD1E6F800F72473 /* AwardsView.swift */; };
 		4DD0A6FC2AD2044800F72473 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A6FE2AD2044800F72473 /* Localizable.strings */; };
 		4DD0A7002AD204EE00F72473 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A7022AD204EE00F72473 /* Localizable.stringsdict */; };
@@ -82,6 +83,7 @@
 		4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		4D1E474C2ACF7EA600A74E79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4D1E474E2ACF811100A74E79 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		4D5C72AA2CA617530087451F /* DataManager+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Notifications.swift"; sourceTree = "<group>"; };
 		4DD0A6F62AD1E6F800F72473 /* AwardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 		4DD0A6FD2AD2044800F72473 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4DD0A6FF2AD2046700F72473 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				4DD0A7222AD24B6B00F72473 /* Editing */,
 				4DD0A7232AD24B7800F72473 /* Awards */,
 				4D1E47442ACF74B800A74E79 /* DataManager.swift */,
+				4D5C72AA2CA617530087451F /* DataManager+Notifications.swift */,
 				4DE0331F2AD0CAB900F0B354 /* Extensions */,
 				4DD0A71E2AD23BBC00F72473 /* Localization */,
 				4DD0A71F2AD2486200F72473 /* Configuration */,
@@ -365,7 +368,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					4D1E472A2ACF5B9000A74E79 = {
 						CreatedOnToolsVersion = 15.0;
@@ -461,6 +464,7 @@
 				4DE0331E2ACFC6A200F0B354 /* NoIssueView.swift in Sources */,
 				4DF816142ACFA846009A52CC /* IssueRow.swift in Sources */,
 				4D1E47422ACF5DDC00A74E79 /* Issue+Ext.swift in Sources */,
+				4D5C72AB2CA617530087451F /* DataManager+Notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +542,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -567,6 +572,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -601,6 +607,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -630,6 +637,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -660,6 +668,7 @@
 				CODE_SIGN_ENTITLEMENTS = IssueTracker/Configuration/IssueTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"IssueTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FH6DPMUTJ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -700,6 +709,7 @@
 				CODE_SIGN_ENTITLEMENTS = IssueTracker/Configuration/IssueTrackerRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"IssueTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FH6DPMUTJ;
 				ENABLE_HARDENED_RUNTIME = YES;
