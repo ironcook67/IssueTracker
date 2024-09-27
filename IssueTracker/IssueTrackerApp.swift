@@ -5,6 +5,7 @@
 //  Created by Chon Torres on 10/5/23.
 //
 
+import CoreSpotlight
 import SwiftUI
 
 @main
@@ -17,7 +18,7 @@ struct IssueTrackerApp: App {
             NavigationSplitView {
                 SidebarView(dataManager: dataManager)
             } content: {
-                ContentView()
+                ContentView(dataManager: dataManager)
             } detail: {
                 DetailView()
             }
@@ -28,6 +29,14 @@ struct IssueTrackerApp: App {
                     dataManager.save()
                 }
             }
+            .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
+        }
+    }
+
+    func loadSpotlightItem(_ userActivity: NSUserActivity) {
+        if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+            dataManager.selectedIssue = dataManager.issue(with: uniqueIdentifier)
+            dataManager.selectedFilter = .all
         }
     }
 }
