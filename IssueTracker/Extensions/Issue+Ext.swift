@@ -28,8 +28,7 @@ extension Issue {
     }
 
     var modificationDate: Date {
-        get { modificationDate_ ?? .now }
-        set { modificationDate_ = newValue}
+        modificationDate_ ?? .now
     }
 
     var formattedCreationDate: String {
