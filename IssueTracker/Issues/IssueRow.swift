@@ -9,22 +9,27 @@ import SwiftUI
 
 struct IssueRow: View {
     @EnvironmentObject var dataManager: DataManager
-    @ObservedObject var issue: Issue
+    @StateObject var viewModel: ViewModel
+
+    init(issue: Issue) {
+        let viewModel = ViewModel(issue: issue)
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
-        NavigationLink(value: issue) {
+        NavigationLink(value: viewModel.issue) {
             HStack {
                 Image(systemName: "exclamationmark.circle")
                     .imageScale(.large)
-                    .opacity(issue.priority == 2 ? 1 : 0)
-                    .accessibilityIdentifier(issue.priority == 2 ? "\(issue.title) High Priority": "")
+                    .opacity(viewModel.iconOpacity)
+                    .accessibilityIdentifier(viewModel.iconIdentifier)
 
                 VStack(alignment: .leading) {
-                    Text(issue.title)
+                    Text(viewModel.title)
                         .font(.headline)
                         .lineLimit(1)
 
-                    Text(issue.tagsList)
+                    Text(viewModel.tagsList)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
@@ -32,11 +37,11 @@ struct IssueRow: View {
                 Spacer()
 
                 VStack(alignment: .trailing) {
-                    Text(issue.formattedCreationDate)
-                        .accessibilityLabel(issue.creationDate.formatted(date: .abbreviated, time: .omitted))
+                    Text(viewModel.creationDate)
+                        .accessibilityLabel(viewModel.accessibilityCreationDate)
                         .font(.subheadline)
 
-                    if issue.completed {
+                    if viewModel.issue.completed {
                         Text("CLOSED")
                             .font(.body.smallCaps())
                     }
@@ -44,8 +49,8 @@ struct IssueRow: View {
             }
             .foregroundStyle(.secondary)
         }
-        .accessibilityHint(issue.priority == 2 ? "High Priority" : "")
-        .accessibilityIdentifier(issue.title)
+        .accessibilityHint(viewModel.accessibilityHint)
+        .accessibilityIdentifier(viewModel.title)
     }
 }
 
