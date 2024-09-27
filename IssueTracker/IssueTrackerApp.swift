@@ -18,7 +18,7 @@ struct IssueTrackerApp: App {
             NavigationSplitView {
                 SidebarView(dataManager: dataManager)
             } content: {
-                ContentView()
+                ContentView(dataManager: dataManager)
             } detail: {
                 DetailView()
             }
