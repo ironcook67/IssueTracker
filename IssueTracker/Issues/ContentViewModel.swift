@@ -8,11 +8,21 @@
 import Foundation
 
 extension ContentView {
+    @dynamicMemberLookup
     class ViewModel: ObservableObject {
         var dataManager: DataManager
 
         init(dataManager: DataManager) {
             self.dataManager = dataManager
+        }
+
+        subscript<Value>(dynamicMember keyPath: KeyPath<DataManager, Value>) -> Value {
+            dataManager[keyPath: keyPath]
+        }
+
+        subscript<Value>(dynamicMember keyPath: ReferenceWritableKeyPath<DataManager, Value>) -> Value {
+            get { dataManager[keyPath: keyPath] }
+            set { dataManager[keyPath: keyPath] = newValue }
         }
 
         func delete(_ offsets: IndexSet) {

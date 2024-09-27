@@ -16,7 +16,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        List(selection: $viewModel.dataManager.selectedIssue) {
+        List(selection: $viewModel.selectedIssue) {
             ForEach(viewModel.dataManager.issuesForSelectedFilter()) { issue in
                 IssueRow(issue: issue)
             }
@@ -26,9 +26,9 @@ struct ContentView: View {
         // Fix Tags in Filtering
         // This is not working in iOS17 due to a Apple "fix" that will not show tokens 
         // when the search field is not empty.
-        .searchable(text: $viewModel.dataManager.filterText,
-                    tokens: $viewModel.dataManager.filterTokens,
-                    suggestedTokens: .constant(viewModel.dataManager.suggestedFilterTokens),
+        .searchable(text: $viewModel.filterText,
+                    tokens: $viewModel.filterTokens,
+                    suggestedTokens: .constant(viewModel.suggestedFilterTokens),
                     prompt: "Filter issues, or type # to add tags"
         ) { tag in
             Text(tag.name)

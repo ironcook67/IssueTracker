@@ -31,10 +31,6 @@ extension Issue {
         modificationDate_ ?? .now
     }
 
-    var formattedCreationDate: String {
-        creationDate.formatted(date: .numeric, time: .omitted)
-    }
-
     var status: String {
         if completed {
             NSLocalizedString("Closed", comment: "This issue has been resolved by the user.")
