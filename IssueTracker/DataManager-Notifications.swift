@@ -1,5 +1,5 @@
 //
-//  DataManager+Notifications.swift
+//  DataManager-Notifications.swift
 //  IssueTracker
 //
 //  Created by Chon Torres on 9/26/24.

@@ -10,11 +10,13 @@ import SwiftUI
 struct SidebarViewToolbar: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var showingAwards = false
+    @State private var showingStore = false
 
     var body: some View {
-        Button(action: dataManager.newTag) {
+        Button(action: tryNewTag) {
             Label("Add tag", systemImage: "plus")
         }
+        .sheet(isPresented: $showingStore, content: StoreView.init)
 
         Button {
             showingAwards.toggle()
@@ -31,6 +33,12 @@ struct SidebarViewToolbar: View {
             Label("ADD SAMPLES", systemImage: "flame")
         }
 #endif
+    }
+
+    func tryNewTag() {
+        if dataManager.newTag() == false {
+            showingStore = true
+        }
     }
 }
 
