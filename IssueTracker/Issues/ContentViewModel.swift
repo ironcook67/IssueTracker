@@ -12,6 +12,10 @@ extension ContentView {
     class ViewModel: ObservableObject {
         var dataManager: DataManager
 
+        var shouldRequestReview: Bool {
+            dataManager.count(for: Tag.fetchRequest()) >= 5
+        }
+
         init(dataManager: DataManager) {
             self.dataManager = dataManager
         }
