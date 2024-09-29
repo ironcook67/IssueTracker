@@ -23,6 +23,11 @@
           "description" : "Get access to the full app.",
           "displayName" : "Premium Unlock",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Hozzáférés a teljes alkalmazáshoz",
+          "displayName" : "Prémium feloldás",
+          "locale" : "hu"
         }
       ],
       "productID" : "com.chontorres.issueTracker.premiumUnlock",
@@ -36,7 +41,10 @@
     "_storefront" : "USA",
     "_storeKitErrors" : [
       {
-        "current" : null,
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
         "enabled" : false,
         "name" : "Load Products"
       },

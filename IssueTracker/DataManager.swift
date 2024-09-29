@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import StoreKit
 import UIKit
 
 enum SortType: String {
@@ -40,6 +41,9 @@ class DataManager: ObservableObject {
 
     /// The UserDefaults suite where we;re saving user data
     let defaults: UserDefaults
+
+    /// The StoreKit products we'veloaded for the store.
+    @Published var products = [Product]()
 
     private var storeTask: Task<Void, Never>?
     private var saveTask: Task<Void, Error>?
@@ -319,6 +323,9 @@ extension DataManager {
             let fetchRequest = Tag.fetchRequest()
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
+
+        case "unlock":
+            return fullVersionUnlocked
 
         default:
             // unknown award criterion. This should never happen.
