@@ -11,6 +11,8 @@ struct ContentView: View {
     @Environment(\.requestReview) var requestReview
     @StateObject var viewModel: ViewModel
 
+    private let newIssueActivity = "com.chontorres.issuetracker.newIssue"
+
     init(dataManager: DataManager) {
         let viewModel = ViewModel(dataManager: dataManager)
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -37,6 +39,11 @@ struct ContentView: View {
         .toolbar(content: ContentViewToolbar.init)
         .onAppear(perform: askForReview)
         .onOpenURL(perform: openURL)
+        .userActivity(newIssueActivity) { activity in
+            activity.isEligibleForPrediction = true
+            activity.title = "New Issue"
+        }
+        .onContinueUserActivity(newIssueActivity, perform: resumeActivity)
     }
 
     func askForReview() {
@@ -49,6 +56,10 @@ struct ContentView: View {
         if url.absoluteString.contains("newIssue") {
             viewModel.dataManager.newIssue()
         }
+    }
+
+    func resumeActivity(_ userActivity: NSUserActivity) {
+        viewModel.dataManager.newIssue()
     }
 }
 
