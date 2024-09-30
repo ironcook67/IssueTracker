@@ -20,6 +20,8 @@
 		4D1E474D2ACF7EA600A74E79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474C2ACF7EA600A74E79 /* DetailView.swift */; };
 		4D1E474F2ACF811100A74E79 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474E2ACF811100A74E79 /* Filter.swift */; };
 		4D5C72AB2CA617530087451F /* DataManager-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */; };
+		4D61FD4E2CAA0E5C00F2A391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FD4D2CAA0E5C00F2A391 /* AppDelegate.swift */; };
+		4D61FD502CAA0E6700F2A391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FD4F2CAA0E6700F2A391 /* SceneDelegate.swift */; };
 		4D6E4E652CA66CF400EE0EB5 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E642CA66CF400EE0EB5 /* ContentViewModel.swift */; };
 		4D6E4E672CA6772F00EE0EB5 /* IssueRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E662CA6772F00EE0EB5 /* IssueRowViewModel.swift */; };
 		4D6E4E6B2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */; };
@@ -91,6 +93,8 @@
 		4D1E474C2ACF7EA600A74E79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4D1E474E2ACF811100A74E79 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager-Notifications.swift"; sourceTree = "<group>"; };
+		4D61FD4D2CAA0E5C00F2A391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D61FD4F2CAA0E6700F2A391 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4D6E4E642CA66CF400EE0EB5 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4D6E4E662CA6772F00EE0EB5 /* IssueRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRowViewModel.swift; sourceTree = "<group>"; };
 		4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager-StoreKit.swift"; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				4DD0A7222AD24B6B00F72473 /* Editing */,
 				4DD0A7232AD24B7800F72473 /* Awards */,
 				4D1E47442ACF74B800A74E79 /* DataManager.swift */,
+				4D61FD4D2CAA0E5C00F2A391 /* AppDelegate.swift */,
+				4D61FD4F2CAA0E6700F2A391 /* SceneDelegate.swift */,
 				4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */,
 				4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */,
 				4DE0331F2AD0CAB900F0B354 /* Extensions */,
@@ -472,6 +478,7 @@
 				4DD0A7152AD21E5A00F72473 /* TagsMenuView.swift in Sources */,
 				4DE033292AD0D0E300F0B354 /* Award.swift in Sources */,
 				4DD0A70B2AD21B3000F72473 /* IssueViewToolbar.swift in Sources */,
+				4D61FD4E2CAA0E5C00F2A391 /* AppDelegate.swift in Sources */,
 				4DD0A7172AD21F6100F72473 /* SmartFilterRow.swift in Sources */,
 				4DD0A6F72AD1E6F900F72473 /* AwardsView.swift in Sources */,
 				4D1E474D2ACF7EA600A74E79 /* DetailView.swift in Sources */,
@@ -479,6 +486,7 @@
 				4D6E4E652CA66CF400EE0EB5 /* ContentViewModel.swift in Sources */,
 				4D1E474B2ACF7E9F00A74E79 /* SidebarView.swift in Sources */,
 				4D6E4E6B2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift in Sources */,
+				4D61FD502CAA0E6700F2A391 /* SceneDelegate.swift in Sources */,
 				4DE033212AD0CB1200F0B354 /* Bundle+Ext.swift in Sources */,
 				4D1E47452ACF74B800A74E79 /* DataManager.swift in Sources */,
 				4DFDB10F2AD3B1D00048574A /* SidebarViewModel.swift in Sources */,
