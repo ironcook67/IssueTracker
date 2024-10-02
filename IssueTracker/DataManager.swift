@@ -7,7 +7,8 @@
 
 import CoreData
 import StoreKit
-import UIKit
+import SwiftUI
+import WidgetKit
 
 enum SortType: String {
     case dateCreated = "creationDate_"
@@ -98,6 +99,12 @@ class DataManager: ObservableObject {
         // in /dev/null so the database is destroyed after the app finishes running.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
+        } else {
+            let groupID = "group.com.chontorres.issuetracker"
+
+            if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+                container.persistentStoreDescriptions.first?.url = url.appending(path: "Main.sqlite")
+            }
         }
 
         container.viewContext.automaticallyMergesChangesFromParent = true
@@ -106,6 +113,11 @@ class DataManager: ObservableObject {
         container.persistentStoreDescriptions.first?.setOption(
             true as NSNumber,
             forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
+        )
+
+        container.persistentStoreDescriptions.first?.setOption(
+            true as NSNumber,
+            forKey: NSPersistentHistoryTrackingKey
         )
 
         // Make sure that we watch iCloud for all changes to ensure the local UI is in sync
@@ -158,6 +170,9 @@ class DataManager: ObservableObject {
 
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
+
+            // Force the widget to update and stay in sync with the app.
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 
@@ -298,40 +313,8 @@ class DataManager: ObservableObject {
 }
 
 extension DataManager {
-    // MARK: - Awards
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
-    }
-
-    func hasEarned(award: Award) -> Bool {
-        switch award.criterion {
-        case "issues":
-            // return true if they added a certain nnumber of issues
-            let fetchRequest = Issue.fetchRequest()
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-
-        case "closed":
-            // return true if they closed a certain number of issues
-            let fetchRequest = Issue.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "completed == true")
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-
-        case "tags":
-            // return true if they created a certain number of tags
-            let fetchRequest = Tag.fetchRequest()
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-
-        case "unlock":
-            return fullVersionUnlocked
-
-        default:
-            // unknown award criterion. This should never happen.
-//            fatalError("Unknown award criterion \(award.criterion)")
-            return false
-        }
     }
 
     func issue(with uniqueIdentifier: String) -> Issue? {
@@ -341,6 +324,24 @@ extension DataManager {
         }
 
         return try? container.viewContext.existingObject(with: id) as? Issue
+    }
+}
+
+extension DataManager {
+    func fetchRequestForTopIssues(count: Int) -> NSFetchRequest<Issue> {
+        let request = Issue.fetchRequest()
+        request.predicate = NSPredicate(format: "completed = false")
+
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Issue.priority, ascending: false)
+        ]
+
+        request.fetchLimit = count
+        return request
+    }
+
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
 }
 
