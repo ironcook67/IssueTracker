@@ -83,7 +83,7 @@ class DataManager: ObservableObject {
     }
 
     /// Initializes a data controller, either in memory (for testing use such as previewing),
-    /// or in permanent storage (for use in regular app runs). 
+    /// or in permanent storage (for use in regular app runs).
     ///
     /// Defautls to permanent storage.
     /// - Parameter inMemory: Whether to store this data in temporary memory or not.
