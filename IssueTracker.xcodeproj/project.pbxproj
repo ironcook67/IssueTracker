@@ -256,6 +256,7 @@
 				4D4CC6DE2CAA67E400635322 /* DataManager-Awards.swift */,
 				4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */,
 				4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */,
+
 				4DE0331F2AD0CAB900F0B354 /* Extensions */,
 				4DD0A71E2AD23BBC00F72473 /* Localization */,
 				4DD0A71F2AD2486200F72473 /* Configuration */,
