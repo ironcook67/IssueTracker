@@ -11,6 +11,7 @@ import SwiftUI
 @main
 struct IssueWidgetBundle: WidgetBundle {
     var body: some Widget {
-        IssueWidget()
+        SimpleIssueWidget()
+        ComplexIssueWidget()
     }
 }
