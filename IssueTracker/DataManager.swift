@@ -343,15 +343,6 @@ extension DataManager {
     func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
         return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
-
-    func issue(with uniqueIdentifier: String) -> Issue? {
-        guard let url = URL(string: uniqueIdentifier) else { return nil }
-        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
-            return nil
-        }
-
-        return try? container.viewContext.existingObject(with: id) as? Issue
-    }
 }
 
 extension DataManager {
