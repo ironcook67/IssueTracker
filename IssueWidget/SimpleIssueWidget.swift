@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
+struct SimpleProvider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date.now, issues: [.example])
     }
@@ -36,8 +36,8 @@ struct SimpleEntry: TimelineEntry {
     let issues: [Issue]
 }
 
-struct IssueWidgetEntryView: View {
-    var entry: Provider.Entry
+struct SimpleIssueWidgetEntryView: View {
+    var entry: SimpleProvider.Entry
 
     var body: some View {
         VStack {
@@ -53,27 +53,28 @@ struct IssueWidgetEntryView: View {
     }
 }
 
-struct IssueWidget: Widget {
-    let kind: String = "IssueWidget"
+struct SimpleIssueWidget: Widget {
+    let kind: String = "SimpleIssueWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: SimpleProvider()) { entry in
             if #available(iOS 17.0, *) {
-                IssueWidgetEntryView(entry: entry)
+                SimpleIssueWidgetEntryView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
             } else {
-                IssueWidgetEntryView(entry: entry)
+                SimpleIssueWidgetEntryView(entry: entry)
                     .padding()
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Up next…")
+        .description("Your #1 top-priority issue.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
 #Preview(as: .systemSmall) {
-    IssueWidget()
+    SimpleIssueWidget()
 } timeline: {
     SimpleEntry(date: .now, issues: [.example])
     SimpleEntry(date: .now, issues: [.example])
