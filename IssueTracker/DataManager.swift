@@ -343,14 +343,23 @@ extension DataManager {
     func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
         return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
+}
 
-    func issue(with uniqueIdentifier: String) -> Issue? {
-        guard let url = URL(string: uniqueIdentifier) else { return nil }
-        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
-            return nil
-        }
+extension DataManager {
+    func fetchRequestForTopIssues(count: Int) -> NSFetchRequest<Issue> {
+        let request = Issue.fetchRequest()
+        request.predicate = NSPredicate(format: "completed = false")
 
-        return try? container.viewContext.existingObject(with: id) as? Issue
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Issue.priority, ascending: false)
+        ]
+
+        request.fetchLimit = count
+        return request
+    }
+
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
 }
 
