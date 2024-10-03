@@ -346,24 +346,6 @@ extension DataManager {
 }
 
 extension DataManager {
-    func fetchRequestForTopIssues(count: Int) -> NSFetchRequest<Issue> {
-        let request = Issue.fetchRequest()
-        request.predicate = NSPredicate(format: "completed = false")
-
-        request.sortDescriptors = [
-            NSSortDescriptor(keyPath: \Issue.priority, ascending: false)
-        ]
-
-        request.fetchLimit = count
-        return request
-    }
-
-    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
-        return (try? container.viewContext.fetch(fetchRequest)) ?? []
-    }
-}
-
-extension DataManager {
     func createSampleData() {
         let viewContext = container.viewContext
 
