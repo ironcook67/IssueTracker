@@ -13,6 +13,8 @@ struct IssueTrackerApp: App {
     @StateObject var dataManager = DataManager()
     @Environment(\.scenePhase) var scenePhase
 
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             NavigationSplitView {

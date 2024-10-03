@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.requestReview) var requestReview
     @StateObject var viewModel: ViewModel
+
+    private let newIssueActivity = "com.chontorres.issuetracker.newIssue"
 
     init(dataManager: DataManager) {
         let viewModel = ViewModel(dataManager: dataManager)
@@ -16,7 +19,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        List(selection: $viewModel.dataManager.selectedIssue) {
+        List(selection: $viewModel.selectedIssue) {
             ForEach(viewModel.dataManager.issuesForSelectedFilter()) { issue in
                 IssueRow(issue: issue)
             }
@@ -26,14 +29,31 @@ struct ContentView: View {
         // Fix Tags in Filtering
         // This is not working in iOS17 due to a Apple "fix" that will not show tokens 
         // when the search field is not empty.
-        .searchable(text: $viewModel.dataManager.filterText,
-                    tokens: $viewModel.dataManager.filterTokens,
-                    suggestedTokens: .constant(viewModel.dataManager.suggestedFilterTokens),
+        .searchable(text: $viewModel.filterText,
+                    tokens: $viewModel.filterTokens,
+                    suggestedTokens: .constant(viewModel.suggestedFilterTokens),
                     prompt: "Filter issues, or type # to add tags"
         ) { tag in
             Text(tag.name)
         }
         .toolbar(content: ContentViewToolbar.init)
+        .onAppear(perform: askForReview)
+        .onOpenURL(perform: viewModel.openURL)
+        .userActivity(newIssueActivity) { activity in
+            activity.isEligibleForPrediction = true
+            activity.title = "New Issue"
+        }
+        .onContinueUserActivity(newIssueActivity, perform: resumeActivity)
+    }
+
+    func askForReview() {
+        if viewModel.shouldRequestReview {
+            requestReview()
+        }
+    }
+
+    func resumeActivity(_ userActivity: NSUserActivity) {
+        viewModel.dataManager.newIssue()
     }
 }
 
