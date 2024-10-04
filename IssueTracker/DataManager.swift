@@ -152,7 +152,9 @@ class DataManager: ObservableObject {
             // and turn off aninmation for faster tests.
             if CommandLine.arguments.contains("enable-testing") {
                 self?.deleteAll()
+#if os(iOS)
                 UIView.setAnimationsEnabled(false)
+#endif // os(iOS)
             }
 #endif  // DEBUG
         }

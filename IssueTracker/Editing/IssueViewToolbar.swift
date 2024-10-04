@@ -20,14 +20,8 @@ struct IssueViewToolbar: View {
 
     var body: some View {
         Menu {
-            Button {
-#if os(iOS)
-                UIPasteboard.general.string = issue.title
-#endif
-            } label: {
-                Label("Copy Issue Title", systemImage: "doc.on.doc")
-            }
-
+            Button("Copy Issue Title", systemImage: "doc.on.doc", action: copyToClipboard)
+             
             Button(action: toggleCompleted) {
                 Label(openCloseButtonText,
                       systemImage: "bubble.left.and.exclamationmark.bubble.right")
@@ -96,6 +90,15 @@ struct IssueViewToolbar: View {
                 // playing haptics did not work and that is OK.
             }
         }
+    }
+
+    func copyToClipboard() {
+#if os(iOS)
+        UIPasteboard.general.string = issue.title
+#else
+        NSPasteboard.general.prepareForNewContents()
+        NSPasteboard.general.setString(issue.title, forType: .string)
+#endif // os(iOS)
     }
 }
 
