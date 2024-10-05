@@ -25,6 +25,7 @@ struct ContentView: View {
             }
             .onDelete(perform: viewModel.delete)
         }
+        .macFrame(minWidth: 220)
         .navigationTitle("Issues")
         // Fix Tags in Filtering
         // This is not working in iOS17 due to a Apple "fix" that will not show tokens 
@@ -40,7 +41,9 @@ struct ContentView: View {
         .onAppear(perform: askForReview)
         .onOpenURL(perform: viewModel.openURL)
         .userActivity(newIssueActivity) { activity in
+#if !os(macOS)
             activity.isEligibleForPrediction = true
+#endif
             activity.title = "New Issue"
         }
         .onContinueUserActivity(newIssueActivity, perform: resumeActivity)
