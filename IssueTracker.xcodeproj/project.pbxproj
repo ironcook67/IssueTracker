@@ -32,6 +32,12 @@
 		4D5C72AB2CA617530087451F /* DataManager-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */; };
 		4D61FD4E2CAA0E5C00F2A391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FD4D2CAA0E5C00F2A391 /* AppDelegate.swift */; };
 		4D61FD502CAA0E6700F2A391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FD4F2CAA0E6700F2A391 /* SceneDelegate.swift */; };
+		4D69CBB02CB113DE00077AC6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE033242AD0D04100F0B354 /* Colors.xcassets */; };
+		4D69CBB12CB113E500077AC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1E47322ACF5B9200A74E79 /* Assets.xcassets */; };
+		4D69CBB22CB1142700077AC6 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E473D2ACF5C0500A74E79 /* Main.xcdatamodeld */; };
+		4D69CBB32CB1168C00077AC6 /* IssueTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E472E2ACF5B9000A74E79 /* IssueTrackerApp.swift */; };
+		4D69CBB52CB11DBE00077AC6 /* NumberBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69CBB42CB11DBE00077AC6 /* NumberBadge.swift */; };
+		4D69CBB62CB11DBE00077AC6 /* NumberBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69CBB42CB11DBE00077AC6 /* NumberBadge.swift */; };
 		4D6E4E652CA66CF400EE0EB5 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E642CA66CF400EE0EB5 /* ContentViewModel.swift */; };
 		4D6E4E672CA6772F00EE0EB5 /* IssueRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E662CA6772F00EE0EB5 /* IssueRowViewModel.swift */; };
 		4D6E4E6B2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */; };
@@ -56,6 +62,37 @@
 		4D8CD4EF2CB084DE007B1B3F /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E473D2ACF5C0500A74E79 /* Main.xcdatamodeld */; };
 		4D8CD4F92CB09F19007B1B3F /* MacFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CD4F82CB09F19007B1B3F /* MacFrame.swift */; };
 		4D8CD4FB2CB0FEBC007B1B3F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CD4FA2CB0FEBC007B1B3F /* Credits.rtf */; };
+		4D8CD5122CB10345007B1B3F /* IssueTrackerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4D8CD5052CB10343007B1B3F /* IssueTrackerWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4D8CD5172CB1047B007B1B3F /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */; };
+		4D8CD5182CB1047B007B1B3F /* Issue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E47412ACF5DDC00A74E79 /* Issue+Ext.swift */; };
+		4D8CD5192CB1047B007B1B3F /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A7182AD21FD800F72473 /* UserFilterRow.swift */; };
+		4D8CD51A2CB1047B007B1B3F /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E6D2CA75FCA00EE0EB5 /* StoreView.swift */; };
+		4D8CD51B2CB1047B007B1B3F /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0331B2ACFC69C00F0B354 /* IssueView.swift */; };
+		4D8CD51C2CB1047B007B1B3F /* InlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CD4CD2CB07F5A007B1B3F /* InlineNavigationBar.swift */; };
+		4D8CD51D2CB1047B007B1B3F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474E2ACF811100A74E79 /* Filter.swift */; };
+		4D8CD51E2CB1047B007B1B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E47302ACF5B9000A74E79 /* ContentView.swift */; };
+		4D8CD51F2CB1047B007B1B3F /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF816132ACFA846009A52CC /* IssueRow.swift */; };
+		4D8CD5202CB1047B007B1B3F /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A7162AD21F6100F72473 /* SmartFilterRow.swift */; };
+		4D8CD5212CB1047B007B1B3F /* DataManager-Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4CC6DE2CAA67E400635322 /* DataManager-Awards.swift */; };
+		4D8CD5222CB1047B007B1B3F /* DataManager-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */; };
+		4D8CD5232CB1047B007B1B3F /* IssueRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E662CA6772F00EE0EB5 /* IssueRowViewModel.swift */; };
+		4D8CD5242CB1047B007B1B3F /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A6F62AD1E6F800F72473 /* AwardsView.swift */; };
+		4D8CD5252CB1047B007B1B3F /* DataManager-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */; };
+		4D8CD5262CB1047B007B1B3F /* SidebarViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A7082AD219C400F72473 /* SidebarViewToolbar.swift */; };
+		4D8CD5272CB1047B007B1B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FD4D2CAA0E5C00F2A391 /* AppDelegate.swift */; };
+		4D8CD5282CB1047B007B1B3F /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4E642CA66CF400EE0EB5 /* ContentViewModel.swift */; };
+		4D8CD5292CB1047B007B1B3F /* ContentViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A70C2AD21C6400F72473 /* ContentViewToolbar.swift */; };
+		4D8CD52A2CB1047B007B1B3F /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0331D2ACFC6A200F0B354 /* NoIssueView.swift */; };
+		4D8CD52B2CB1047B007B1B3F /* IssueViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A70A2AD21B3000F72473 /* IssueViewToolbar.swift */; };
+		4D8CD52C2CB1047B007B1B3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FD4F2CAA0E6700F2A391 /* SceneDelegate.swift */; };
+		4D8CD52D2CB1047B007B1B3F /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDB10E2AD3B1D00048574A /* SidebarViewModel.swift */; };
+		4D8CD52E2CB1047B007B1B3F /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE033202AD0CB1200F0B354 /* Bundle+Ext.swift */; };
+		4D8CD52F2CB1047B007B1B3F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E47442ACF74B800A74E79 /* DataManager.swift */; };
+		4D8CD5302CB1047B007B1B3F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474C2ACF7EA600A74E79 /* DetailView.swift */; };
+		4D8CD5312CB1047B007B1B3F /* Tag+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E47462ACF74C700A74E79 /* Tag+Ext.swift */; };
+		4D8CD5322CB1047B007B1B3F /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A7142AD21E5A00F72473 /* TagsMenuView.swift */; };
+		4D8CD5332CB1047B007B1B3F /* MacFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CD4F82CB09F19007B1B3F /* MacFrame.swift */; };
+		4D8CD5342CB1047B007B1B3F /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE033282AD0D0E300F0B354 /* Award.swift */; };
 		4DD0A6F72AD1E6F900F72473 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0A6F62AD1E6F800F72473 /* AwardsView.swift */; };
 		4DD0A6FC2AD2044800F72473 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A6FE2AD2044800F72473 /* Localizable.strings */; };
 		4DD0A7002AD204EE00F72473 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A7022AD204EE00F72473 /* Localizable.stringsdict */; };
@@ -84,6 +121,10 @@
 		4DE033262AD0D04100F0B354 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE033242AD0D04100F0B354 /* Colors.xcassets */; };
 		4DE033292AD0D0E300F0B354 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE033282AD0D0E300F0B354 /* Award.swift */; };
 		4DF816142ACFA846009A52CC /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF816132ACFA846009A52CC /* IssueRow.swift */; };
+		4DFA26B52CB1138C0000C04D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CD4FA2CB0FEBC007B1B3F /* Credits.rtf */; };
+		4DFA26B62CB1139A0000C04D /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A7062AD2056B00F72473 /* Awards.json */; };
+		4DFA26B72CB113B10000C04D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A6FE2AD2044800F72473 /* Localizable.strings */; };
+		4DFA26B82CB113BB0000C04D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A7022AD204EE00F72473 /* Localizable.stringsdict */; };
 		4DFDB10F2AD3B1D00048574A /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDB10E2AD3B1D00048574A /* SidebarViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +142,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4D8CD4D32CB08451007B1B3F;
 			remoteInfo = IssueTrackerWidgetMacExtension;
+		};
+		4D8CD5102CB10345007B1B3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D1E47232ACF5B9000A74E79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D8CD5042CB10343007B1B3F;
+			remoteInfo = "IssueTrackerWatch Watch App";
 		};
 		4DD0A72C2AD24DBD00F72473 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -131,6 +179,17 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D8CD5132CB10345007B1B3F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4D8CD5122CB10345007B1B3F /* IssueTrackerWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +217,7 @@
 		4D61FD4F2CAA0E6700F2A391 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4D61FD572CAA5EAC00F2A391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4D61FD592CAA5EAC00F2A391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4D69CBB42CB11DBE00077AC6 /* NumberBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBadge.swift; sourceTree = "<group>"; };
 		4D6E4E642CA66CF400EE0EB5 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4D6E4E662CA6772F00EE0EB5 /* IssueRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRowViewModel.swift; sourceTree = "<group>"; };
 		4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager-StoreKit.swift"; sourceTree = "<group>"; };
@@ -172,6 +232,7 @@
 		4D8CD4D42CB08451007B1B3F /* IssueTrackerWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IssueTrackerWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8CD4F82CB09F19007B1B3F /* MacFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacFrame.swift; sourceTree = "<group>"; };
 		4D8CD4FA2CB0FEBC007B1B3F /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		4D8CD5052CB10343007B1B3F /* IssueTrackerWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IssueTrackerWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0A6F62AD1E6F800F72473 /* AwardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 		4DD0A6FD2AD2044800F72473 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4DD0A6FF2AD2046700F72473 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -221,6 +282,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4D8CD4D72CB08451007B1B3F /* IssueTrackerWidgetMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (4D8CD4E32CB08453007B1B3F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = IssueTrackerWidgetMac; sourceTree = "<group>"; };
+		4D8CD5062CB10344007B1B3F /* IssueTrackerWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "IssueTrackerWatch Watch App"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +308,13 @@
 			files = (
 				4D8CD4D62CB08451007B1B3F /* SwiftUI.framework in Frameworks */,
 				4D8CD4D52CB08451007B1B3F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D8CD5022CB10343007B1B3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +346,7 @@
 				4DD0A7482AD2751100F72473 /* IssueTrackerUITests */,
 				4D8821C92CAF21E60073AAA9 /* IssueWidget */,
 				4D8CD4D72CB08451007B1B3F /* IssueTrackerWidgetMac */,
+				4D8CD5062CB10344007B1B3F /* IssueTrackerWatch Watch App */,
 				4D61FD562CAA5EAC00F2A391 /* Frameworks */,
 				4D1E472C2ACF5B9000A74E79 /* Products */,
 			);
@@ -290,6 +360,7 @@
 				4DD0A7472AD2751100F72473 /* IssueTrackerUITests.xctest */,
 				4D4CC68F2CAA64EE00635322 /* IssueWidgetExtension.appex */,
 				4D8CD4D42CB08451007B1B3F /* IssueTrackerWidgetMacExtension.appex */,
+				4D8CD5052CB10343007B1B3F /* IssueTrackerWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8CD4CE2CB07F5A007B1B3F /* PlatformAdjustments */,
+				4DE0331F2AD0CAB900F0B354 /* Extensions */,
 				4D6E4E6C2CA75FC000EE0EB5 /* Store */,
 				4DD0A71D2AD23B8A00F72473 /* Filters */,
 				4DD0A7212AD24B6200F72473 /* Issues */,
@@ -309,14 +381,13 @@
 				4D4CC6DE2CAA67E400635322 /* DataManager-Awards.swift */,
 				4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */,
 				4D6E4E6A2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift */,
-				4DE0331F2AD0CAB900F0B354 /* Extensions */,
+				4D8CD4FA2CB0FEBC007B1B3F /* Credits.rtf */,
 				4DD0A71E2AD23BBC00F72473 /* Localization */,
 				4DD0A71F2AD2486200F72473 /* Configuration */,
 				4D1E472E2ACF5B9000A74E79 /* IssueTrackerApp.swift */,
 				4D1E47322ACF5B9200A74E79 /* Assets.xcassets */,
 				4DE033242AD0D04100F0B354 /* Colors.xcassets */,
 				4D1E47352ACF5B9200A74E79 /* Preview Content */,
-				4D8CD4FA2CB0FEBC007B1B3F /* Credits.rtf */,
 			);
 			path = IssueTracker;
 			sourceTree = "<group>";
@@ -362,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8CD4CD2CB07F5A007B1B3F /* InlineNavigationBar.swift */,
+				4D69CBB42CB11DBE00077AC6 /* NumberBadge.swift */,
 				4D8CD4F82CB09F19007B1B3F /* MacFrame.swift */,
 			);
 			path = PlatformAdjustments;
@@ -490,12 +562,14 @@
 				4D1E47282ACF5B9000A74E79 /* Frameworks */,
 				4D1E47292ACF5B9000A74E79 /* Resources */,
 				4D61FD682CAA5EAF00F2A391 /* Embed Foundation Extensions */,
+				4D8CD5132CB10345007B1B3F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4D4CC69B2CAA64F000635322 /* PBXTargetDependency */,
 				4D8CD4E12CB08453007B1B3F /* PBXTargetDependency */,
+				4D8CD5112CB10345007B1B3F /* PBXTargetDependency */,
 			);
 			name = IssueTracker;
 			productName = IssueTracker;
@@ -542,6 +616,28 @@
 			productName = IssueTrackerWidgetMacExtension;
 			productReference = 4D8CD4D42CB08451007B1B3F /* IssueTrackerWidgetMacExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		4D8CD5042CB10343007B1B3F /* IssueTrackerWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D8CD5162CB10345007B1B3F /* Build configuration list for PBXNativeTarget "IssueTrackerWatch Watch App" */;
+			buildPhases = (
+				4D8CD5012CB10343007B1B3F /* Sources */,
+				4D8CD5022CB10343007B1B3F /* Frameworks */,
+				4D8CD5032CB10343007B1B3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4D8CD5062CB10344007B1B3F /* IssueTrackerWatch Watch App */,
+			);
+			name = "IssueTrackerWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "IssueTrackerWatch Watch App";
+			productReference = 4D8CD5052CB10343007B1B3F /* IssueTrackerWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
 		};
 		4DD0A7272AD24DBD00F72473 /* IssueTrackerTests */ = {
 			isa = PBXNativeTarget;
@@ -598,6 +694,9 @@
 					4D8CD4D32CB08451007B1B3F = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					4D8CD5042CB10343007B1B3F = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					4DD0A7272AD24DBD00F72473 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 4D1E472A2ACF5B9000A74E79;
@@ -627,6 +726,7 @@
 				4DD0A7462AD2751100F72473 /* IssueTrackerUITests */,
 				4D4CC68E2CAA64EE00635322 /* IssueWidgetExtension */,
 				4D8CD4D32CB08451007B1B3F /* IssueTrackerWidgetMacExtension */,
+				4D8CD5042CB10343007B1B3F /* IssueTrackerWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -664,6 +764,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D8CD5032CB10343007B1B3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DFA26B72CB113B10000C04D /* Localizable.strings in Resources */,
+				4DFA26B62CB1139A0000C04D /* Awards.json in Resources */,
+				4D69CBB02CB113DE00077AC6 /* Colors.xcassets in Resources */,
+				4D69CBB12CB113E500077AC6 /* Assets.xcassets in Resources */,
+				4DFA26B82CB113BB0000C04D /* Localizable.stringsdict in Resources */,
+				4DFA26B52CB1138C0000C04D /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4DD0A7262AD24DBD00F72473 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,6 +810,7 @@
 				4DD0A6F72AD1E6F900F72473 /* AwardsView.swift in Sources */,
 				4D1E474D2ACF7EA600A74E79 /* DetailView.swift in Sources */,
 				4D1E473F2ACF5C0500A74E79 /* Main.xcdatamodeld in Sources */,
+				4D69CBB62CB11DBE00077AC6 /* NumberBadge.swift in Sources */,
 				4D6E4E652CA66CF400EE0EB5 /* ContentViewModel.swift in Sources */,
 				4D1E474B2ACF7E9F00A74E79 /* SidebarView.swift in Sources */,
 				4D6E4E6B2CA69B6B00EE0EB5 /* DataManager-StoreKit.swift in Sources */,
@@ -754,6 +868,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D8CD5012CB10343007B1B3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D8CD5172CB1047B007B1B3F /* SidebarView.swift in Sources */,
+				4D8CD5182CB1047B007B1B3F /* Issue+Ext.swift in Sources */,
+				4D8CD5192CB1047B007B1B3F /* UserFilterRow.swift in Sources */,
+				4D8CD51A2CB1047B007B1B3F /* StoreView.swift in Sources */,
+				4D8CD51B2CB1047B007B1B3F /* IssueView.swift in Sources */,
+				4D8CD51C2CB1047B007B1B3F /* InlineNavigationBar.swift in Sources */,
+				4D69CBB32CB1168C00077AC6 /* IssueTrackerApp.swift in Sources */,
+				4D69CBB22CB1142700077AC6 /* Main.xcdatamodeld in Sources */,
+				4D8CD51D2CB1047B007B1B3F /* Filter.swift in Sources */,
+				4D8CD51E2CB1047B007B1B3F /* ContentView.swift in Sources */,
+				4D69CBB52CB11DBE00077AC6 /* NumberBadge.swift in Sources */,
+				4D8CD51F2CB1047B007B1B3F /* IssueRow.swift in Sources */,
+				4D8CD5202CB1047B007B1B3F /* SmartFilterRow.swift in Sources */,
+				4D8CD5212CB1047B007B1B3F /* DataManager-Awards.swift in Sources */,
+				4D8CD5222CB1047B007B1B3F /* DataManager-Notifications.swift in Sources */,
+				4D8CD5232CB1047B007B1B3F /* IssueRowViewModel.swift in Sources */,
+				4D8CD5242CB1047B007B1B3F /* AwardsView.swift in Sources */,
+				4D8CD5252CB1047B007B1B3F /* DataManager-StoreKit.swift in Sources */,
+				4D8CD5262CB1047B007B1B3F /* SidebarViewToolbar.swift in Sources */,
+				4D8CD5272CB1047B007B1B3F /* AppDelegate.swift in Sources */,
+				4D8CD5282CB1047B007B1B3F /* ContentViewModel.swift in Sources */,
+				4D8CD5292CB1047B007B1B3F /* ContentViewToolbar.swift in Sources */,
+				4D8CD52A2CB1047B007B1B3F /* NoIssueView.swift in Sources */,
+				4D8CD52B2CB1047B007B1B3F /* IssueViewToolbar.swift in Sources */,
+				4D8CD52C2CB1047B007B1B3F /* SceneDelegate.swift in Sources */,
+				4D8CD52D2CB1047B007B1B3F /* SidebarViewModel.swift in Sources */,
+				4D8CD52E2CB1047B007B1B3F /* Bundle+Ext.swift in Sources */,
+				4D8CD52F2CB1047B007B1B3F /* DataManager.swift in Sources */,
+				4D8CD5302CB1047B007B1B3F /* DetailView.swift in Sources */,
+				4D8CD5312CB1047B007B1B3F /* Tag+Ext.swift in Sources */,
+				4D8CD5322CB1047B007B1B3F /* TagsMenuView.swift in Sources */,
+				4D8CD5332CB1047B007B1B3F /* MacFrame.swift in Sources */,
+				4D8CD5342CB1047B007B1B3F /* Award.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4DD0A7242AD24DBD00F72473 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -793,6 +947,12 @@
 			);
 			target = 4D8CD4D32CB08451007B1B3F /* IssueTrackerWidgetMacExtension */;
 			targetProxy = 4D8CD4E02CB08453007B1B3F /* PBXContainerItemProxy */;
+		};
+		4D8CD5112CB10345007B1B3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 4D8CD5042CB10343007B1B3F /* IssueTrackerWatch Watch App */;
+			targetProxy = 4D8CD5102CB10345007B1B3F /* PBXContainerItemProxy */;
 		};
 		4DD0A72D2AD24DBD00F72473 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1163,6 +1323,71 @@
 			};
 			name = Release;
 		};
+		4D8CD5142CB10345007B1B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "IssueTrackerWatch Watch App/IssueTrackerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IssueTrackerWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 4FH6DPMUTJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IssueTrackerWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.chontorres.IssueTracker;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chontorres.IssueTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		4D8CD5152CB10345007B1B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "IssueTrackerWatch Watch App/IssueTrackerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IssueTrackerWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 4FH6DPMUTJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IssueTrackerWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.chontorres.IssueTracker;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chontorres.IssueTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 		4DD0A72F2AD24DBD00F72473 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1274,6 +1499,15 @@
 			buildConfigurations = (
 				4D8CD4E52CB08453007B1B3F /* Debug */,
 				4D8CD4E62CB08453007B1B3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D8CD5162CB10345007B1B3F /* Build configuration list for PBXNativeTarget "IssueTrackerWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8CD5142CB10345007B1B3F /* Debug */,
+				4D8CD5152CB10345007B1B3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

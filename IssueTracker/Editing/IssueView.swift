@@ -77,7 +77,7 @@ struct IssueView: View {
             SettingsLink {
                 Text("Check Settings")
             }
-#else
+#elseif os(iOS)
             Button("Check Settings", action: showAppSettings)
 #endif // os(macOS)
             Button("Cancel", role: .cancel) { }

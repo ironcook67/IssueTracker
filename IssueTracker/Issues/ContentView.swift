@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+#if !os(watchOS)
     @Environment(\.requestReview) var requestReview
+#endif // !os(watchOS)
+
     @StateObject var viewModel: ViewModel
 
     private let newIssueActivity = "com.chontorres.issuetracker.newIssue"
@@ -27,6 +30,7 @@ struct ContentView: View {
         }
         .macFrame(minWidth: 220)
         .navigationTitle("Issues")
+#if !os(watchOS)
         // Fix Tags in Filtering
         // This is not working in iOS17 due to a Apple "fix" that will not show tokens 
         // when the search field is not empty.
@@ -37,6 +41,7 @@ struct ContentView: View {
         ) { tag in
             Text(tag.name)
         }
+#endif // !os(watchOS)
         .toolbar(content: ContentViewToolbar.init)
         .onAppear(perform: askForReview)
         .onOpenURL(perform: viewModel.openURL)
@@ -50,9 +55,11 @@ struct ContentView: View {
     }
 
     func askForReview() {
+#if !os(watchOS)
         if viewModel.shouldRequestReview {
             requestReview()
         }
+#endif // !os(watchOS)
     }
 
     func resumeActivity(_ userActivity: NSUserActivity) {
