@@ -25,6 +25,7 @@ struct ContentView: View {
             }
             .onDelete(perform: viewModel.delete)
         }
+        .macFrame(minWidth: 220)
         .navigationTitle("Issues")
         // Fix Tags in Filtering
         // This is not working in iOS17 due to a Apple "fix" that will not show tokens 

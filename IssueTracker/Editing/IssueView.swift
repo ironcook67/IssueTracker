@@ -20,6 +20,7 @@ struct IssueView: View {
                 VStack(alignment: .leading) {
                     TextField("Title", text: $issue.title, prompt: Text("Enter the issue title here"))
                         .font(.title)
+                        .labelsHidden()
 
                     Text("**Modified:** \(issue.modificationDate.formatted(date: .long, time: .shortened))")
                         .foregroundStyle(.secondary)
@@ -47,6 +48,7 @@ struct IssueView: View {
                               prompt: Text("Enter the issue description here"),
                               axis: .vertical)
                 }
+                .labelsHidden()
             }
 
             Section("Reminders") {
@@ -61,6 +63,7 @@ struct IssueView: View {
                 }
             }
         }
+        .formStyle(.grouped)
         .disabled(issue.isDeleted)
         .onReceive(issue.objectWillChange) { _ in
             dataManager.queueSave()
