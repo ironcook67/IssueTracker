@@ -19,6 +19,9 @@
 		4D1E474B2ACF7E9F00A74E79 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */; };
 		4D1E474D2ACF7EA600A74E79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474C2ACF7EA600A74E79 /* DetailView.swift */; };
 		4D1E474F2ACF811100A74E79 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E474E2ACF811100A74E79 /* Filter.swift */; };
+		4D3A80802CB203AB000EC715 /* IssueRowWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A807F2CB203AB000EC715 /* IssueRowWatch.swift */; };
+		4D3A80832CB233B6000EC715 /* ToolbarItemPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A80822CB233B6000EC715 /* ToolbarItemPlacement.swift */; };
+		4D3A80842CB233B6000EC715 /* ToolbarItemPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A80822CB233B6000EC715 /* ToolbarItemPlacement.swift */; };
 		4D4CC6902CAA64EE00635322 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D61FD572CAA5EAC00F2A391 /* WidgetKit.framework */; };
 		4D4CC6912CAA64EE00635322 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D61FD592CAA5EAC00F2A391 /* SwiftUI.framework */; };
 		4D4CC69C2CAA64F000635322 /* IssueWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4D4CC68F2CAA64EE00635322 /* IssueWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -210,6 +213,8 @@
 		4D1E474A2ACF7E9F00A74E79 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		4D1E474C2ACF7EA600A74E79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4D1E474E2ACF811100A74E79 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		4D3A807F2CB203AB000EC715 /* IssueRowWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRowWatch.swift; sourceTree = "<group>"; };
+		4D3A80822CB233B6000EC715 /* ToolbarItemPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItemPlacement.swift; sourceTree = "<group>"; };
 		4D4CC68F2CAA64EE00635322 /* IssueWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IssueWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4CC6DE2CAA67E400635322 /* DataManager-Awards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager-Awards.swift"; sourceTree = "<group>"; };
 		4D5C72AA2CA617530087451F /* DataManager-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager-Notifications.swift"; sourceTree = "<group>"; };
@@ -435,6 +440,7 @@
 				4D8CD4CD2CB07F5A007B1B3F /* InlineNavigationBar.swift */,
 				4D69CBB42CB11DBE00077AC6 /* NumberBadge.swift */,
 				4D8CD4F82CB09F19007B1B3F /* MacFrame.swift */,
+				4D3A80822CB233B6000EC715 /* ToolbarItemPlacement.swift */,
 			);
 			path = PlatformAdjustments;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				4DD0A70C2AD21C6400F72473 /* ContentViewToolbar.swift */,
 				4DF816132ACFA846009A52CC /* IssueRow.swift */,
 				4D6E4E662CA6772F00EE0EB5 /* IssueRowViewModel.swift */,
+				4D3A807F2CB203AB000EC715 /* IssueRowWatch.swift */,
 			);
 			path = Issues;
 			sourceTree = "<group>";
@@ -800,6 +807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3A80832CB233B6000EC715 /* ToolbarItemPlacement.swift in Sources */,
 				4D1E47472ACF74C700A74E79 /* Tag+Ext.swift in Sources */,
 				4DD0A7152AD21E5A00F72473 /* TagsMenuView.swift in Sources */,
 				4DE033292AD0D0E300F0B354 /* Award.swift in Sources */,
@@ -882,6 +890,7 @@
 				4D69CBB22CB1142700077AC6 /* Main.xcdatamodeld in Sources */,
 				4D8CD51D2CB1047B007B1B3F /* Filter.swift in Sources */,
 				4D8CD51E2CB1047B007B1B3F /* ContentView.swift in Sources */,
+				4D3A80802CB203AB000EC715 /* IssueRowWatch.swift in Sources */,
 				4D69CBB52CB11DBE00077AC6 /* NumberBadge.swift in Sources */,
 				4D8CD51F2CB1047B007B1B3F /* IssueRow.swift in Sources */,
 				4D8CD5202CB1047B007B1B3F /* SmartFilterRow.swift in Sources */,
@@ -901,6 +910,7 @@
 				4D8CD52E2CB1047B007B1B3F /* Bundle+Ext.swift in Sources */,
 				4D8CD52F2CB1047B007B1B3F /* DataManager.swift in Sources */,
 				4D8CD5302CB1047B007B1B3F /* DetailView.swift in Sources */,
+				4D3A80842CB233B6000EC715 /* ToolbarItemPlacement.swift in Sources */,
 				4D8CD5312CB1047B007B1B3F /* Tag+Ext.swift in Sources */,
 				4D8CD5322CB1047B007B1B3F /* TagsMenuView.swift in Sources */,
 				4D8CD5332CB1047B007B1B3F /* MacFrame.swift in Sources */,
@@ -1351,7 +1361,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Debug;
 		};
@@ -1384,7 +1394,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Release;
 		};

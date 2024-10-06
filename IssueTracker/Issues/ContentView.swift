@@ -24,7 +24,11 @@ struct ContentView: View {
     var body: some View {
         List(selection: $viewModel.selectedIssue) {
             ForEach(viewModel.dataManager.issuesForSelectedFilter()) { issue in
+#if os(watchOS)
+                IssueRowWatch(issue: issue)
+#else
                 IssueRow(issue: issue)
+#endif // os(watchOS)
             }
             .onDelete(perform: viewModel.delete)
         }

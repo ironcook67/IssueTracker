@@ -12,7 +12,9 @@ struct TagsMenuView: View {
     @ObservedObject var issue: Issue
 
     var body: some View {
-#if !os(watchOS)
+#if os(watchOS)
+        LabeledContent("Tags", value: issue.tagsList)
+#else
         Menu {
             ForEach(issue.sortedTags) { tag in
                 Button {
@@ -42,7 +44,7 @@ struct TagsMenuView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .animation(nil, value: issue.tagsList)
         }
-#endif // !os(watchOS)
+#endif // os(watchOS)
     }
 }
 
