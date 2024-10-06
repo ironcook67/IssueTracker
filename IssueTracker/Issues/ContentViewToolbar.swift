@@ -11,6 +11,7 @@ struct ContentViewToolbar: View {
     @EnvironmentObject var dataManager: DataManager
 
     var body: some View {
+#if !os(watchOS)
         Menu {
             Button(dataManager.filterEnabled ? "Turn Filter Off" : "Turn Filter On") {
                 dataManager.filterEnabled.toggle()
@@ -56,6 +57,7 @@ struct ContentViewToolbar: View {
                 .symbolVariant(dataManager.filterEnabled ? .fill : .none)
         }
         .help("Filter")
+#endif // !os(watchOS)
 
         Button(action: dataManager.newIssue) {
             Label("New Issue", systemImage: "square.and.pencil")

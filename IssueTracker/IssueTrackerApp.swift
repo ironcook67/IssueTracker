@@ -5,7 +5,9 @@
 //  Created by Chon Torres on 10/5/23.
 //
 
+#if canImport(CoreSpotlight)
 import CoreSpotlight
+#endif // canImport(CoreSpotlight)
 import SwiftUI
 
 @main
@@ -33,14 +35,18 @@ struct IssueTrackerApp: App {
                     dataManager.save()
                 }
             }
+#if canImport(CoreSpotlight)
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
+#endif // canImport(CoreSpotlight)
         }
     }
 
+#if canImport(CoreSpotlight)
     func loadSpotlightItem(_ userActivity: NSUserActivity) {
         if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
             dataManager.selectedIssue = dataManager.issue(with: uniqueIdentifier)
             dataManager.selectedFilter = .all
         }
     }
+#endif // canImport(CoreSpotlight)
 }

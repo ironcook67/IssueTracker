@@ -5,20 +5,25 @@
 //  Created by Chon Torres on 10/7/23.
 //
 
+#if canImport(CoreHaptics)
 import CoreHaptics
+#endif // canImport(CoreHaptics)
 import SwiftUI
 
 struct IssueViewToolbar: View {
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var issue: Issue
 
+#if canImport(CoreHaptics)
     @State private var engine = try? CHHapticEngine()
+#endif // canImport(CoreHaptics)
 
     var openCloseButtonText: LocalizedStringKey {
         issue.completed ? "Re-open Issue" : "Close Issue"
     }
 
     var body: some View {
+#if !os(watchOS)
         Menu {
             Button("Copy Issue Title", systemImage: "doc.on.doc", action: copyToClipboard)
              
@@ -26,6 +31,7 @@ struct IssueViewToolbar: View {
                 Label(openCloseButtonText,
                       systemImage: "bubble.left.and.exclamationmark.bubble.right")
             }
+#if canImport(CoreHaptics)
             // Comment in for default haptics.
 //            .sensoryFeedback(trigger: issue.completed) { _, newValue in
 //                if newValue {
@@ -34,7 +40,8 @@ struct IssueViewToolbar: View {
 //                    nil
 //                }
 //            }
-
+#endif // canImport(CoreHaptics)
+            
             Divider()
 
             Section("Tags") {
@@ -43,12 +50,15 @@ struct IssueViewToolbar: View {
         } label: {
             Label("Actions", systemImage: "ellipsis.circle")
         }
+#endif // !os(watchOS)
+
     }
 
     func toggleCompleted() {
         issue.completed.toggle()
         dataManager.save()
 
+#if canImport(CoreHaptics)
         // Comment in for custom haptics.
         if issue.completed {
             do {
@@ -90,12 +100,13 @@ struct IssueViewToolbar: View {
                 // playing haptics did not work and that is OK.
             }
         }
+#endif // canImport(CoreHaptics)
     }
 
     func copyToClipboard() {
 #if os(iOS)
         UIPasteboard.general.string = issue.title
-#else
+#elseif os(macOS)
         NSPasteboard.general.prepareForNewContents()
         NSPasteboard.general.setString(issue.title, forType: .string)
 #endif // os(iOS)
