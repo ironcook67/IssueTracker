@@ -13,7 +13,16 @@ extension ContentView {
         var dataManager: DataManager
 
         var shouldRequestReview: Bool {
-            dataManager.count(for: Tag.fetchRequest()) >= 5
+            if dataManager.count(for: Tag.fetchRequest()) >= 5 {
+                let reviewRequestCount = UserDefaults.standard.integer(forKey: "reviewRequestCount")
+                UserDefaults.standard.set(reviewRequestCount + 1, forKey: "reviewRequestCount")
+
+                if reviewRequestCount.isMultiple(of: 10) {
+                    return true
+                }
+            }
+            
+            return false
         }
 
         init(dataManager: DataManager) {
