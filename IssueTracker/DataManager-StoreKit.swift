@@ -39,12 +39,14 @@ extension DataManager {
         }
     }
 
+#if !os(visionOS)
     func purchase(_ product: Product) async throws {
         let result = try await product.purchase()
         if case let .success(validation) = result {
             try await finalize(validation.payloadValue)
         }
     }
+#endif // !os(visionOS)
 
     @MainActor
     func finalize(_ transaction: Transaction) async {

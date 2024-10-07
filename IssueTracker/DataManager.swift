@@ -8,7 +8,9 @@
 import CoreData
 import StoreKit
 import SwiftUI
+#if canImport(WidgetKit)
 import WidgetKit
+#endif // canImport(WidgetKit)
 
 enum SortType: String {
     case dateCreated = "creationDate_"
@@ -177,8 +179,10 @@ class DataManager: ObservableObject {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
 
+#if canImport(WidgetCenter)
             // Force the widget to update and stay in sync with the app.
             WidgetCenter.shared.reloadAllTimelines()
+#endif // canImport(WidgetCenter)
         }
     }
 
