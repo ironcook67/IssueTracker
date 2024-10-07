@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserFilterRow: View {
-    @EnvironmentObject var dataMaanager: DataManager
+    @EnvironmentObject var dataManager: DataManager
 
     var filter: Filter
     var rename: (Filter) -> Void
