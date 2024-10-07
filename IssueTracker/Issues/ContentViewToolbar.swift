@@ -11,6 +11,7 @@ struct ContentViewToolbar: View {
     @EnvironmentObject var dataManager: DataManager
 
     var body: some View {
+#if !os(watchOS)
         Menu {
             Button(dataManager.filterEnabled ? "Turn Filter Off" : "Turn Filter On") {
                 dataManager.filterEnabled.toggle()
@@ -23,6 +24,8 @@ struct ContentViewToolbar: View {
                     Text("Date Created").tag(SortType.dateCreated)
                     Text("Date Modified").tag(SortType.dateModified)
                 }
+                .pickerStyle(.inline)
+                .labelsHidden()
 
                 Divider()
 
@@ -30,6 +33,8 @@ struct ContentViewToolbar: View {
                     Text("Newest to Oldest").tag(false)
                     Text("Oldest to Newest").tag(true)
                 }
+                .pickerStyle(.inline)
+                .labelsHidden()
             }
 
             Picker("Status", selection: $dataManager.filterStatus) {
@@ -51,10 +56,13 @@ struct ContentViewToolbar: View {
             Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
                 .symbolVariant(dataManager.filterEnabled ? .fill : .none)
         }
+        .help("Filter")
+#endif // !os(watchOS)
 
         Button(action: dataManager.newIssue) {
             Label("New Issue", systemImage: "square.and.pencil")
         }
+        .help("New Issue")
     }
 }
 

@@ -8,7 +8,9 @@
 import CoreData
 import StoreKit
 import SwiftUI
+#if canImport(WidgetKit)
 import WidgetKit
+#endif // canImport(WidgetKit)
 
 enum SortType: String {
     case dateCreated = "creationDate_"
@@ -26,7 +28,9 @@ class DataManager: ObservableObject {
     /// The lone CloudKit container used to store all of our data
     let container: NSPersistentCloudKitContainer
 
+#if !os(watchOS)
     var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+#endif // !os(watchOS)
 
     @Published var selectedFilter: Filter? = Filter.all
     @Published var selectedIssue: Issue?
@@ -137,6 +141,7 @@ class DataManager: ObservableObject {
             if let description = self?.container.persistentStoreDescriptions.first {
                 description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
 
+                #if !os(watchOS)
                 if let coordinator = self?.container.persistentStoreCoordinator {
                     self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
                         forStoreWith: description,
@@ -145,16 +150,10 @@ class DataManager: ObservableObject {
 
                     self?.spotlightDelegate?.startSpotlightIndexing()
                 }
+                #endif // !os(watchOS)
             }
 
-#if DEBUG
-            // Used for UI Testing. Delete all of the data to start with a clean slate
-            // and turn off aninmation for faster tests.
-            if CommandLine.arguments.contains("enable-testing") {
-                self?.deleteAll()
-                UIView.setAnimationsEnabled(false)
-            }
-#endif  // DEBUG
+            self?.checkForTestingEvironment()
         }
     }
 
@@ -171,8 +170,10 @@ class DataManager: ObservableObject {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
 
+#if canImport(WidgetCenter)
             // Force the widget to update and stay in sync with the app.
             WidgetCenter.shared.reloadAllTimelines()
+#endif // canImport(WidgetCenter)
         }
     }
 
